@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>CME Calc</title>
+    <script src="main.js"></script>
+</head>
+
+<body class="flex gap-10">
+    <div class="flex flex-col items-center m-5 bg-gray-100 px-10 py-3">
+
+
+        <h1 class="font-bold text-2xl">CME Calc</h1>
+        <form class="mt-8 flex flex-col gap-4">
+            <label>Número de salas cirurgicas:</label>
+            <input class="border border-2 p-1 w-full mt-1" type="number" id="numberOfSurgeryRoom" />
+
+
+            <label>Número de cirurgias/sala/dia:</label>
+            <input class="border border-2 p-1 w-full mt-1" type="number" id="numberOfSurgeryPerRoomPerDay" />
+
+
+            <label>Qual o intervalo de pico de funcionamento da CME?</label>
+            <input class="border border-2 p-1 w-full mt-1" type="number" id="intervalFullCME" />
+
+
+            <label>Número de leitos na UTI</label>
+            <input class="border border-2 p-1 w-full mt-1" type="number" id="numberOfBedUTI" />
+
+
+            <label>Número de leitos na internação, RPA...</label>
+            <input class="border border-2 p-1 w-full mt-1" type="number" id="numberOfBedRPA" />
+
+
+            <label>Volume por cirurgia:</label>
+            <input class="border border-2 p-1 w-full mt-1" type="number" id="volumePerSurgery" />
+
+
+            <label>Volume por Leito de UTI por dia:</label>
+            <input class="border border-2 p-1 w-full mt-1" type="number" id="volumeUTIBedPerDay" />
+
+
+            <label>Volume por Leito de Internação por dia:</label>
+            <input class="border border-2 p-1 w-full mt-1" type="number" id="volumePerBedHospPerDay" />
+
+            <div class="flex items-center justify-center">
+                <button onclick="getResult()"
+                    class="bg-blue-500 hover:bg-blue-700 duration-500 transform p-2 font-bold text-white rounded-md mt-5">Ver
+                    resultados</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="flex flex-col  m-5 bg-gray-50 px-10 py-3 w-[50%]">
+
+
+        <h1 class="font-bold text-2xl">Resultados</h1>
+
+        <div class="flex flex-col gap-3 mt-5">
+            <h4 class="font-bold">Número de cirurgias por dia:</h4>
+            <p id="rnumberOfSurgeryPerDay"></p>
+
+            <h4 class="font-bold">Volume Total Diário - Cirurgias:</h4>
+            <p id="rtotalDailyVolumeOfSurgery"></p>
+
+            <h4 class="font-bold">Número de Leitos de UTI:</h4>
+            <p id="rnumberOfBedUTI"></p>
+
+            <h4 class="font-bold">Volume Total Diário - UTIs:</h4>
+            <p id="rtotalVolumeDailyUTI"></p>
+
+            <h4 class="font-bold">Número de Leitos de Internação, RPA:</h4>
+            <p id="rvolumePerBedHospPerDay"></p>
+
+            <h4 class="font-bold">Volume Total Diário - Internação:</h4>
+            <p id="rtotalVolumeHospDaily"></p>
+
+            <h4 class="font-bold">Estimativa Volume Total Diário por Material:</h4>
+            <p id="restimatedTotalVolumeDailyperMaterial"></p>
+
+            <h4 class="font-bold">Estimativa de Volume Total Diário em UE:</h4>
+            <p id="rtotalEstimatedVolumeDailyUE"></p>
+
+
+            <h4 class="font-bold">Estimativa de Volume Total Diário em litros:</h4>
+            <p id="rtotalEstimatedVolumeDailyLiters"></p>
+        </div>
+    </div>
+</body>
+
+</html>
